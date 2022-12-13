@@ -1,0 +1,13 @@
+- name: Install Cinder in Block_Storage Node
+  apt:
+    name:
+      - lvm2 thin-provisioning-tools
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install Horizon in Block_Storage Node
+  apt:
+    name:
+      - openstack-dashboard
+    state: latest
+  when: ansible_distribution == "Ubuntu"

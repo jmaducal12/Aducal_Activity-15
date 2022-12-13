@@ -1,0 +1,25 @@
+- name: Install Neutron in Controller Node
+  apt:
+    name:
+      - neutron-server
+      - neutron-plugin-ml2
+      - neutron-linuxbridge-agent
+      - neutron-dhcp-agent
+      - neutron-metadata-agent
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install Horizon in Controller Node
+  apt:
+    name:
+      - openstack-dashboard
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install Cinder in Controller Node
+  apt:
+    name:
+      - cinder-api
+      - cinder-scheduler
+    state: latest
+  when: ansible_distribution == "Ubuntu"

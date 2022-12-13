@@ -1,0 +1,9 @@
+[Controller]
+localhost ansible_connection=local
+
+[Block_Storage]
+CentOS ansible_host=192.168.56.108
+
+[Networking]
+server3 ansible_host=192.168.56.110
+
